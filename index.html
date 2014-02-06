@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popular Instagram Posts</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="posts"></div>
+  </div>
+  <script>
+    $(function() {
+      $.get("https://api.instagram.com/v1/media/popular?client_id=4bbf750dd530480baf89bc7325a8c30e", function(data) {
+          var posts = data.data;
+          // sort post by likes
+          posts.sort(function(a, b) {
+             return b.likes.count - a.likes.count
+          });
+      })
+    });
+  </script>
+</body>
+</html>
