@@ -25,9 +25,9 @@
             var user = post.user;
             var image = post.images.standard_resolution.url;
             $("#posts").append('<div class="post" id="' + post.id + '"><img src="' + image + '"></div>');
-            $("#" + post.id).append('<div class="info"><img class="profile" src="' + user.profile_picture + '"><h3>'
+            $("#" + post.id).append('<div class="info"><img class="profile" src="' + user.profile_picture + '"><h3><a href="http://instagram.com/' + user.username + '">'
               + user.username +
-              '</h3><p>&#9825; <b>' + post.likes.count + '</b> people like this</p></div>')
+              '</a></h3><p>&#9825; <b>' + post.likes.count + '</b> people like this</p></div>')
           });
         }
       });
