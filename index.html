@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popular Instagram Posts</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <link rel="stylesheet" href="./posts.css"></link>
+</head>
+
+<body>
+  <div id="posts"></div>
+  <script>
+    $(function() {
+      $.ajax({
+        url: "https://api.instagram.com/v1/media/popular?client_id=4bbf750dd530480baf89bc7325a8c30e",
+        dataType: "jsonp",
+        success: function(data) {
+          var posts = data.data;
+          // sort post by likes
+          posts.sort(function(a, b) {
+             return b.likes.count - a.likes.count;
+          });
+          _.each(posts, function(post) {
+            var user = post.user;
+            var image = post.images.standard_resolution.url;
+            $("#posts").append('<div class="post" id="' + post.id + '"><img src="' + image + '"></div>');
+            $("#" + post.id).append('<div class="info"><img class="profile" src="' + user.profile_picture + '"><h3>'
+              + user.username +
+              '</h3><p>&#9825; <b>' + post.likes.count + '</b> people like this</p></div>')
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
