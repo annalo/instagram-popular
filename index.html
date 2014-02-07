@@ -20,12 +20,15 @@
           var posts = data.data;
           // sort post by likes
           posts.sort(function(a, b) {
-             return b.likes.count - a.likes.count
+             return b.likes.count - a.likes.count;
           });
-          console.log(posts);
           _.each(posts, function(post) {
-            var image = post.images.standard_resolution.url
-            $("#posts").append('<div class="post"><img src="' + image + '"></div>');
+            var user = post.user;
+            var image = post.images.standard_resolution.url;
+            $("#posts").append('<div class="post" id="' + post.id + '"><img src="' + image + '"></div>');
+            $("#" + post.id).append('<div class="info"><img class="profile" src="' + user.profile_picture + '">'
+              + user.username +
+              '</div>')
           });
         }
       });

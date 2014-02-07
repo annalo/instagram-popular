@@ -1,9 +1,40 @@
+body {
+  background-color: #eaeaea;
+  padding: 5%;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+  font-size: .8em;
+}
+
 .post {
-  width: 50%;
-  height: 80%;
-  margin: 0 auto 2em;
+  background-color: #fff;
+  width: 70%;
+  margin: 0 auto 5em;
+  overflow: auto;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px 0px #ccc;
+  position: relative;
+}
+
+.info {
+  padding: 1em;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  position: absolute;
+  height: 100%;
+  width: 30%;
+}
+
+.profile {
+  width: 3em;
+  height: auto;
+  border-radius: 2px;
+  border-color: #eaeaea;
+  border: 1px solid;
 }
 
 img {
-  width: 100%;
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
 }
