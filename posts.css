@@ -1,14 +1,15 @@
 body {
   background-color: #eaeaea;
-  padding: 5%;
+  padding: 3em;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
   font-size: .8em;
+  font-color: #aaaaaa;
 }
 
 .post {
   background-color: #fff;
   width: 70%;
-  margin: 0 auto 5em;
+  margin: 0 auto 3em;
   overflow: auto;
   border-radius: 2px;
   box-shadow: 0 1px 3px 0px #ccc;
@@ -29,8 +30,13 @@ body {
   width: 3em;
   height: auto;
   border-radius: 2px;
-  border-color: #eaeaea;
-  border: 1px solid;
+  box-shadow: 0 1px 3px 0px #ccc;
+}
+
+h3 {
+  display: inline-block;
+  padding: 0 1em 0 1em;
+  margin: 0;
 }
 
 img {
