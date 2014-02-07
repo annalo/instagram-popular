@@ -1,9 +1,9 @@
 body {
   background-color: #eaeaea;
-  padding: 3em;
+  padding-top: 3em;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
   font-size: .8em;
-  font-color: #aaaaaa;
+  color: #aaaaaa;
 }
 
 .post {
@@ -34,9 +34,19 @@ body {
 }
 
 h3 {
+  color: #5E5E5E;
   display: inline-block;
   padding: 0 1em 0 1em;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #5E5E5E;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 img {
